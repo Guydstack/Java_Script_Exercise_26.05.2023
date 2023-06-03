@@ -148,20 +148,27 @@ console.log(getAge('1962-01-01'))
 // Datetime: Exercise 4
 // Write a JavaScript function to get time differences in hours between two dates.
 
-function differencesInHours(){
- let date1 = new Date(2018, 11, 24, 12, 33, 30, 0).getHours()
- let date2 = new Date(2018, 11, 24, 10, 33, 30, 0).getHours()
+function differencesInHours(dateA,dateB){
+let differences = new Date(dateA).getHours() - new Date(dateB).getHours()
 
- return date1-date2
+ return differences
 }
 
-console.log(differencesInHours());
+console.log(differencesInHours("October 13, 2014 12:13:00", "October 13, 2014 11:13:00"));
 
-// Test Data :
-// dt1 = new Date("October 13, 2014 08:11:00");
-// dt2 = new Date("October 13, 2014 11:13:00");
-// console.log(diff_hours(dt1, dt2));
+// Datetime: Exercise 5
+// Write a JavaScript function to get time differences in days between two dates.
 
+
+
+function differencesInDays(dateA,dateB){
+    let differences = Math.abs (new Date(dateA)) - Math.abs (new Date(dateB))
+    const diffDays = Math.ceil(differences / (1000 * 60 * 60 * 24)); 
+
+     return diffDays
+    }
+    
+    console.log(differencesInDays("October 22, 2014 12:13:00", "October 18, 2014 11:13:00"));
 
 
 // Array: Exercise 1 
@@ -235,5 +242,72 @@ function getRendomItemsFromArray(arrayItems){
     }
         
     console.log(getRendomItemsFromArray(arr2));
+
+
+// Conditional statements and loops: Exercise 1
+// 1. Write a JavaScript program that displays the largest integer among two integers.
+
+function whoIsLarger(a,b){
+    if (a>b){
+        return a
+    }else return b
+}
+console.log(whoIsLarger(10,6));
+
+// Conditional statements and loops: Exercise 2
+// 2. Write a JavaScript conditional statement to find the sign of the product of three numbers. 
+// Display an alert box with the specified sign.
+
+function findTheSignOfNumber(a,b,c){
+
+    if (a < 0 && a < b && a < c){
+        return "the sign of a is " + a
+    }if (b < 0 && b < a && b < c){
+        return "the sign of b is " + b
+    }if (c < 0 && c < a && c < b){
+        return "the sign of c is " + c
+    } else return "Not a negative numbber"
+}  
+
+console.log(findTheSignOfNumber(5,3,-4));
+
+
+// Conditional statements and loops: Exercise 3
+// Write a JavaScript conditional statement to sort three numbers. 
+// Display an alert box to show the results.
+
+function sortThreeNumbers(a,b,c){
+    const sorted = [a,b,c].sort();
+    return sorted
+}
+
+console.log(sortThreeNumbers(8,7,5));
+
+
+// Conditional statements and loops: Exercise 4
+// Write a JavaScript conditional statement to find the largest of five numbers. 
+// Display an alert box to show the results.
+
+function largestOfNumbers(a,b,c){
+if ( a >= b && a >= c){
+    return a
+}if ( b >= a && b >= c){
+    return b
+}else return c
+}
+
+console.log(largestOfNumbers(3,-10,4));
+
+// Conditional statements and loops: Exercise 5
+// Write a JavaScript program to construct the following pattern, using a nested for loop.
+
+const stars = ["*\n", "**\n", "***\n", "****\n", "*****\n"];
+
+let text = "";
+for (let i = 0; i < stars.length; i++) {
+  text += stars[i];
+}
+
+console.log(text);
 
 
